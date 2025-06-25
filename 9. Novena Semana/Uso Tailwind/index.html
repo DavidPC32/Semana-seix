@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online con Chat Funcional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <!-- Barra de Navegación -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl font-bold text-blue-600">MiTienda</span>
+                    <a href="#" class="text-gray-600 hover:text-blue-500 px-3 py-2">Inicio</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-500 px-3 py-2">Productos</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-500 px-3 py-2">Contacto</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-50 transition">
+                        Iniciar Sesión
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+                        Registrarse
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal - Productos -->
+    <div class="max-w-6xl mx-auto my-8 px-4">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Nuestros Productos</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Producto 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:-translate-y-1">
+                <img src="Laptop ultra slim.jpg" alt="Laptop" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Laptop Ultra Slim</h3>
+                    <p class="text-gray-600 mb-4">Potente laptop para trabajo y entretenimiento.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-blue-600">$899</span>
+                        <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:-translate-y-1">
+                <img src="Smartphone Pro.jpg" alt="Smartphone" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Smartphone Pro</h3>
+                    <p class="text-gray-600 mb-4">Último modelo con cámara profesional.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-blue-600">$699</span>
+                        <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:-translate-y-1">
+                <img src="Auriculares.jpg" alt="Auriculares" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Auriculares Inalámbricos</h3>
+                    <p class="text-gray-600 mb-4">Sonido premium con cancelación de ruido.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-blue-600">$199</span>
+                        <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat de Ayuda Flotante -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <!-- Botón de Chat -->
+        <button id="chat-toggle" class="
+            w-16 h-16 
+            bg-blue-600 text-white 
+            rounded-full 
+            shadow-xl
+            flex items-center justify-center
+            hover:bg-blue-700 
+            transition-all
+            duration-300
+            chat-btn-pulse
+        ">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        </button>
+
+        <!-- Contenedor del Chat -->
+        <div id="chat-container" class="
+            absolute bottom-20 right-0
+            w-80 bg-white 
+            rounded-lg shadow-2xl
+            overflow-hidden
+            flex flex-col
+            transform translate-y-4
+            opacity-0
+            invisible
+            transition-all
+            duration-300
+        ">
+            <!-- Encabezado del Chat -->
+            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+                <h3 class="font-bold text-lg">Chat de Ayuda</h3>
+                <button id="chat-close" class="text-white hover:text-gray-200 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mensajes del Chat -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-gray-50" style="height: 300px;">
+                <!-- Mensajes se cargarán aquí dinámicamente -->
+            </div>
+
+            <!-- Entrada de Mensajes -->
+            <div class="p-3 border-t border-gray-200 bg-white">
+                <div class="flex">
+                    <input id="chat-input" type="text" placeholder="Escribe tu mensaje..." class="
+                            flex-1 px-3 py-2 
+                            border border-gray-300 
+                            rounded-l 
+                            focus:outline-none focus:ring-2 focus:ring-blue-500
+                            transition
+                        ">
+                    <button id="chat-send" class="
+                            px-4 py-2 
+                            bg-blue-600 text-white 
+                            rounded-r 
+                            hover:bg-blue-700 
+                            transition
+                            focus:outline-none focus:ring-2 focus:ring-blue-500
+                        ">
+                        Enviar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

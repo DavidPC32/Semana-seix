@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Interior Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">MinimalDesign</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#trends">Tendencias</a></li>
+                <li><a href="#survey">Descubre tu estilo</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Diseño de Interiores Minimalista</h1>
+                <p>Menos es más. Descubre las últimas tendencias en diseño minimalista.</p>
+                <a href="#survey" class="btn">Descubre tu estilo</a>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Nuestros Proyectos</h2>
+            <div class="projects-grid"></div>
+        </section>
+
+        <section id="trends" class="trends">
+            <h2>Colores en Tendencia 2023</h2>
+            <div class="color-trends"></div>
+        </section>
+
+        <section id="survey" class="survey">
+            <h2>Descubre tu estilo ideal</h2>
+            <div class="survey-container">
+                <div class="survey-intro">
+                    <p>Responde esta breve encuesta y te recomendaremos diseños acorde a tus gustos:</p>
+                </div>
+                <form id="style-survey" class="survey-form">
+                    <div class="form-group">
+                        <h3>1. ¿Qué colores prefieres en tu espacio?</h3>
+                        <div class="options">
+                            <label>
+                                <input type="radio" name="colors" value="neutrales" required>
+                                <span>Neutrales y naturales</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="colors" value="vibrantes">
+                                <span>Vibrantes y contrastantes</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="colors" value="oscuros">
+                                <span>Oscuros y dramáticos</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>2. ¿Cómo prefieres los muebles?</h3>
+                        <div class="options">
+                            <label>
+                                <input type="radio" name="furniture" value="minimalista" required>
+                                <span>Minimalistas y bajos</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="furniture" value="comodo">
+                                <span>Cómodos y espaciosos</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="furniture" value="unico">
+                                <span>Únicos y llamativos</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>3. ¿Qué atmósfera te gusta más?</h3>
+                        <div class="options">
+                            <label>
+                                <input type="radio" name="atmosphere" value="tranquila" required>
+                                <span>Tranquila y armoniosa</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="atmosphere" value="acogedora">
+                                <span>Acogedora y familiar</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="atmosphere" value="dinamica">
+                                <span>Dinámica y expresiva</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Descubrir mi estilo</button>
+                </form>
+
+                <div id="survey-result" class="survey-result hidden">
+                    <h3>Tu estilo ideal es: <span id="result-style"></span></h3>
+                    <div id="result-description" class="result-description"></div>
+                    <div id="result-examples" class="result-examples"></div>
+                    <button id="retake-survey" class="btn-outline">Volver a realizar la encuesta</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contacto</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Tu mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 MinimalDesign. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

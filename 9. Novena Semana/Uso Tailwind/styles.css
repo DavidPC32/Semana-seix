@@ -1,0 +1,67 @@
+/* Animación para el botón de chat */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.chat-btn-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Estado activo del chat */
+#chat-container.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estado activo del botón */
+#chat-toggle.active {
+    background-color: #1e40af; /* blue-800 */
+    animation: none;
+    transform: scale(1.1);
+}
+
+/* Estilos para los mensajes */
+.chat-message {
+    max-width: 85%;
+    word-wrap: break-word;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.chat-message.user {
+    margin-left: auto;
+    background-color: #3b82f6; /* blue-500 */
+    color: white;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.chat-message.bot {
+    margin-right: auto;
+    background-color: #e5e7eb; /* gray-200 */
+    border-bottom-left-radius: 0.25rem;
+}
+
+/* Scrollbar personalizada */
+#chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
